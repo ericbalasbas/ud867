@@ -4,8 +4,6 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.util.Pair;
-import android.widget.Toast;
 
 import com.example.eric.jokelibrary.JokeActivity;
 import com.example.eric.myapplication.jokebackend.myApi.MyApi;
@@ -17,12 +15,12 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 
 import java.io.IOException;
 
-class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(Context... params) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(new NetHttpTransport(),
                     new AndroidJsonFactory(), null)
@@ -41,11 +39,9 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
             myApiService = builder.build();
         }
 
-        context = params[0].first;
-        String name = params[0].second;
+        context = params[0];
 
         try {
-            // return myApiService.sayHi(name).execute().getData();
             return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
@@ -54,8 +50,6 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected void onPostExecute(String result) {
-//        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-
         Intent jokeIntent = new Intent(context, JokeActivity.class);
         jokeIntent.putExtra(Intent.EXTRA_TEXT, result);
         context.startActivity(jokeIntent);

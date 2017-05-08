@@ -46,15 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-//        Joker joker = new Joker();
-//        String jokeText = joker.getJoke();
-//        Toast.makeText(this, jokeText, Toast.LENGTH_SHORT).show();
-//
-//        Intent jokeIntent = new Intent(this, JokeActivity.class);
-//        jokeIntent.putExtra(Intent.EXTRA_TEXT, jokeText);
-//        startActivity(jokeIntent);
-
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+        new EndpointsAsyncTask().execute(this);
     }
 
 
