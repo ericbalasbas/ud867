@@ -8,10 +8,7 @@ import static org.junit.Assert.*;
 
 
 public class EndpointsAsyncTaskTest {
-//    @Test
-//    public void onPostExecute() throws Exception {
-//
-//    }
+
 
     // run tests using :app connectedDebugAndroidTest
 
