@@ -12,4 +12,13 @@
         android:id="@+id/joke_text_view"
         android:text="@string/joke_default_text"/>
 
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+
 </android.support.v7.widget.LinearLayoutCompat>
