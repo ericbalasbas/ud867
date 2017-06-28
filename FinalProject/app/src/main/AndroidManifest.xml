@@ -3,17 +3,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.udacity.gradle.builditbigger">
 
-    <application
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
-        </activity>
-
-    </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
+// TODO: Fix having 2 launchers installed, see https://discussions.udacity.com/t/2-apps-are-getting-installed/198280/3
 
 /**
  * A placeholder fragment containing a simple view.
@@ -24,11 +25,21 @@ public class FreeMainActivityFragment extends Fragment {
     }
 
     private InterstitialAd mInterstitialAd;
+    
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.free_fragment_main, container, false);
+
+        return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        View root = getView();
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
@@ -57,7 +68,7 @@ public class FreeMainActivityFragment extends Fragment {
             }
         });
 
-       // Show joke when ad is closed
+        // Show joke when ad is closed
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
@@ -66,7 +77,6 @@ public class FreeMainActivityFragment extends Fragment {
 
         });
 
-        return root;
     }
 }
 
