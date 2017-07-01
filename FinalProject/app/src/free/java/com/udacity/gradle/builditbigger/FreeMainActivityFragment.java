@@ -14,7 +14,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
-// TODO: Fix having 2 launchers installed, see https://discussions.udacity.com/t/2-apps-are-getting-installed/198280/3
 
 /**
  * A placeholder fragment containing a simple view.
