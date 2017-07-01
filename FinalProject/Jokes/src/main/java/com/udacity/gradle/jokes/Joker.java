@@ -5,8 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Joker {
 
     // http://www.rd.com/jokes/one-liners/
-    String[] jokeArray = {"Some people just have a way with words, and other people … oh … not have way. - Steve Martin",
-                            "The four most beautiful words in our common language: I told you so. - Gore Vidal",
+    String[] jokeArray = {"Some people just have a way with words, and other people ... oh ... not have way. - Steve Martin",
+            "The four most beautiful words in our common language: I told you so. - Gore Vidal",
     "All pro athletes are bilingual. They speak English and profanity. - Gordie Howe, hockey player",
             "I bought one of those tapes to teach you Spanish in your sleep. During the night, the tape skipped. Now I can only stutter in Spanish. - Steven Wright",
             "My girlfriend and I often laugh about how competitive we are. But I laugh more.",
@@ -61,11 +61,8 @@ public class Joker {
 
         // https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java/363692#363692
 
-        // nextInt is normally exclusive of the top value,
-        // so add 1 to make it inclusive
         int randomNum = ThreadLocalRandom.current().nextInt(0, size);
 
-        // return "This is totally a funny joke";
         return jokeArray[randomNum];
     }
 }

@@ -25,7 +25,7 @@ public class FreeMainActivityFragment extends Fragment {
     }
 
     private InterstitialAd mInterstitialAd;
-    
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
